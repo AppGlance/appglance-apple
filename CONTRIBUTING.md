@@ -25,8 +25,9 @@ agree on the shape.
    heading.
 2. Set `AppGlance.version` to the new number and commit. It is the `User-Agent` every request
    carries, so a stale one makes the fielded versions unreadable.
-3. Re-measure the footprint. The README and the appglance.app homepage quote it ("~200 KB", "no
-   third-party dependencies"), and a stale number is worse than none:
+3. Re-measure the footprint. The README and the appglance.app homepage quote it ("about three
+   hundred kilobytes", "~300 KB SDK", "no third-party dependencies"), and a stale number is worse
+   than none:
 
    ```bash
    xcodebuild build -quiet -scheme AppGlance -configuration Release -destination "generic/platform=iOS" -derivedDataPath /tmp/appglance-dd
@@ -35,7 +36,9 @@ agree on the shape.
 
    1.0.0 measured ≈197 KB and 1.2.0 ≈208 KB on the toolchain of their day; 1.2.1 measures
    ≈268 KB with Swift 6.3.3, and the tagged 1.2.0 measures the same there, so that jump is the
-   compiler's, not the code's. Compare like with like: measure the previous tag with the same
+   compiler's, not the code's. **1.2.4 measures 297,971 B ≈298 KB on Swift 6.3.3 / Xcode 26.6
+   (2026-08-31), and 1.2.2 re-measures at 268,556 B on that same toolchain** — so the ~30 KB
+   since 1.2.2 is code that 1.2.3 and 1.2.4 added, and this one is not the compiler's. Compare like with like: measure the previous tag with the same
    toolchain before reading a diff as growth. If the figure moves past what is quoted, update the
    README (and tell whoever maintains the site).
 4. `git tag x.y.z && git push origin main x.y.z`.

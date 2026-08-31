@@ -25,7 +25,7 @@ Xcode: **File → Add Package Dependencies…** and paste the repository URL. Or
 | visionOS | 1.0 |
 | Swift / Xcode | 5.10 / 15.3 |
 
-No third-party dependencies, no binary blobs, and about a quarter of a megabyte added to
+No third-party dependencies, no binary blobs, and about three hundred kilobytes added to
 an app. Compiles warning-free under strict concurrency checking and in Swift 6 language mode.
 
 ## For AI coding agents
